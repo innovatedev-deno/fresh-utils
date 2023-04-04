@@ -1,7 +1,7 @@
 // Islands must be located in the project's islands directory.
 // copy this code, or to use this directly, create ~/islands/MobileNav.tsx add this code:
 //
-// export default from 'fresh-utils/islands/nav/MobileNav.tsx'
+// export {default as default} from 'fresh-utils/islands/nav/MobileNav.tsx';
 //
 import { tw } from "twind";
 import { useState, useId } from "preact/hooks";
