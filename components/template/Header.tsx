@@ -8,7 +8,7 @@ export default function({title}: {title?: string}) {
   }
   return <>
     <a href="/" class={styles.logo}>
-      <img src="/logo.svg" />
+      <img src="/logo.svg" class={styles.logoImg} />
       {title}
     </a>
     
