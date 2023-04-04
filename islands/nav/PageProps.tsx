@@ -7,7 +7,7 @@ import { PageProps } from '$fresh/server.ts'
 import { useEffect } from "preact/hooks";
 import {pageProps} from 'fresh-utils/signals/template.ts'
 
-export default function PagePropsIsland({props}: {props: PageProps}) {
+export default function PagePropsIsland({props}: {props: Omit<PageProps, "data">}) {
   // needs to be set in an island
   useEffect(() => {
     pageProps.value = props;
