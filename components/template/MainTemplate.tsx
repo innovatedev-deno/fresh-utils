@@ -27,7 +27,7 @@ export default function MainTemplate({ children, props, title, footer=<p>
     container: tw`min-h-screen flex flex-col`,
     header: tw`bg-[${headerColor}]  text-white`,
     nav: tw`flex flex-wrap justify-between ${contentBox}`,
-    main: tw`flex-grow p-4 ${contentBox}`,
+    main: tw`flex-grow p-4 ${contentBox} max-w-screen overflow-auto`,
     footer: tw`bg-[${footerColor}] text-white p-4`,
     footerText: tw`text-center ${contentBox}`,
   };
