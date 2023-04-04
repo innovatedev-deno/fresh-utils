@@ -11,24 +11,23 @@ interface TemplateProps {
   footer?: ComponentChildren;
 }
 
-// TODO: figure out why theme vars have spaces in them?
-const headerColor = tw(theme('colors.primary.dark')).trim();
-const footerColor = tw(theme('colors.secondary.dark')).trim();
-
-const contentBox = "max-w-screen-lg m-auto w-full";
-const styles = {
-  container: tw`min-h-screen flex flex-col`,
-
-  header: tw`bg-[${headerColor}]  text-white`,
-  nav: tw`flex flex-wrap justify-between ${contentBox}`,
-  main: tw`flex-grow p-4 ${contentBox}`,
-  footer: tw`bg-[${footerColor}] text-white p-4`,
-  footerText: tw`text-center ${contentBox}`,
-};
-
-export default function MainTemplate({ children, title, footer=<p class={styles.footerText}>
+export default function MainTemplate({ children, title, footer=<p>
   &copy;{new Date().getFullYear()}
 </p> }: TemplateProps) {
+
+  // TODO: figure out why theme vars have spaces in them?
+  const headerColor = tw(theme('colors.primary.dark')).trim();
+  const footerColor = tw(theme('colors.secondary.dark')).trim();
+
+  const contentBox = "max-w-screen-lg m-auto w-full";
+  const styles = {
+    container: tw`min-h-screen flex flex-col`,
+    header: tw`bg-[${headerColor}]  text-white`,
+    nav: tw`flex flex-wrap justify-between ${contentBox}`,
+    main: tw`flex-grow p-4 ${contentBox}`,
+    footer: tw`bg-[${footerColor}] text-white p-4`,
+    footerText: tw`text-center ${contentBox}`,
+  };
 
   return (
     <>
@@ -55,7 +54,9 @@ export default function MainTemplate({ children, title, footer=<p class={styles.
           {children}
         </main>
         <footer class={styles.footer}>
-          {footer}
+          <div class={styles.footerText}>
+            {footer}
+          </div>
         </footer>
       </div>
     </>
