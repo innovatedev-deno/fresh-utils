@@ -48,7 +48,7 @@ export default function({links}: {links: {href: string, text: string}[]}) {
           resolvedPath?.startsWith(link.href) ? 'font-bold underline' : ''
         }`}
         href={link.href}>
-          {link.text} - {resolvedPath}
+          {link.text}
         </a>
       )}
     </div>
