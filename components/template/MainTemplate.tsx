@@ -1,17 +1,20 @@
 import { Head } from "$fresh/runtime.ts";
 import { ComponentChildren } from "preact";
 import { tw, theme } from "twind";
-import SkipToContent from "./SkipToContent.tsx";
+import SkipToContent from "fresh-utils/components/template/SkipToContent.tsx";
 import publicSettings from "~/settings-public.ts";
 import Header from "~/components/template/Header.tsx";
+import { PageProps } from "$fresh/server.ts";
+import PagePropsIsland from "~/islands/PageProps.tsx";
 
 interface TemplateProps {
   children: ComponentChildren;
+  props: Omit<PageProps, "data">;
   title?: string;
   footer?: ComponentChildren;
 }
 
-export default function MainTemplate({ children, title, footer=<p>
+export default function MainTemplate({ children, props, title, footer=<p>
   &copy;{new Date().getFullYear()}
 </p> }: TemplateProps) {
 
@@ -32,6 +35,7 @@ export default function MainTemplate({ children, title, footer=<p>
   return (
     <>
       <Head>
+        
         <title>{title ? `${title} | ` : ""}{publicSettings.app.title}</title>
 
         <script
@@ -44,6 +48,9 @@ export default function MainTemplate({ children, title, footer=<p>
       <SkipToContent target="main-content" />
 
       <div class={styles.container}>
+        {/* Note: islands have to be a child node */}
+        <PagePropsIsland props={props} />
+
         <header class={styles.header}>
           <nav class={styles.nav} aria-label="Main">
             <Header title={publicSettings.app.title} />
@@ -61,4 +68,4 @@ export default function MainTemplate({ children, title, footer=<p>
       </div>
     </>
   );
-};
+}
