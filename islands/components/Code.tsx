@@ -13,7 +13,7 @@ export default function Code({children}: {children: ComponentChildren}) {
   }, [didCopy]);
 
   return (
-    <code class="border border-color-gray-600 bg-gray-300 color-gray-900 w-[300px] px-2 flex justify-between">
+    <code class="border border-color-gray-600 bg-gray-300 color-gray-900 w-full px-2 flex justify-between">
       <pre class="whitespace-pre-wrap" ref={ref}>{children}</pre>
 
       <button class={`${didCopy && 'bg-green-200'} animate-all px-2 opacity-75 text-xs`} type="button" onClick={() => {
