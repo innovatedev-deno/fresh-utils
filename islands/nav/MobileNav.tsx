@@ -1,10 +1,22 @@
+// Islands must be located in the project's islands directory.
+// copy this code, or to use this directly, create ~/islands/MobileNav.tsx add this code:
+//
+// export default from 'fresh-utils/islands/nav/MobileNav.tsx'
+//
 import { tw } from "twind";
 import { useState, useId } from "preact/hooks";
+import { pageProps } from "../../signals/pageProps.ts";
 
 export default function({links}: {links: {href: string, text: string}[]}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuId = useId();
 
+  let resolvedPath = pageProps.value?.route;
+  if(resolvedPath !== undefined) {
+    Object.entries(pageProps.value?.params!).forEach(([k, v]) => {
+      resolvedPath = resolvedPath!.replace(`:${k}`, v)
+    });
+  }
 
   return <>
     <button
@@ -31,7 +43,14 @@ export default function({links}: {links: {href: string, text: string}[]}) {
           isMenuOpen ? 'flex' : 'hidden'
         } sm:flex flex-col sm:flex-row sm:items-center sm:justify-center sm:space-x-4 w-full sm:w-auto sm:space-y-0 space-y-2 text-center`}
         id={menuId}>
-      {links.map(link => <a class="p-4 border-t sm:border-0 border-gray-400 block" href={link.href}>{link.text}</a>)}
+      {links.map(link => <a
+        class={`p-4 border-t sm:border-0 border-gray-400 block ${
+          resolvedPath?.startsWith(link.href) ? 'font-bold underline' : ''
+        }`}
+        href={link.href}>
+          {link.text} - {resolvedPath}
+        </a>
+      )}
     </div>
   </>
 }
