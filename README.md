@@ -4,13 +4,13 @@
 
 Import Map:
 
-  {
-    "imports": {
-      "~/": "./",
-      "fresh-utils/": "https://raw.githubusercontent.com/innovatedev-deno/fresh-utils/main/",
-      ...
+    {
+      "imports": {
+        "~/": "./",
+        "fresh-utils/": "https://raw.githubusercontent.com/innovatedev-deno/fresh-utils/main/",
+        ...
+      }
     }
-  }
 
 ## Islands
 
@@ -18,6 +18,6 @@ Islands must be in your project directly. You cannot import from a remote locati
 
 Create the file in your ~/islands folder, and use this code to use the version in this repo:
 
-  export {default as default} from 'fresh-utils/islands/path/to/IslandYouWant.tsx';
+    export {default as default} from 'fresh-utils/islands/path/to/IslandYouWant.tsx';
   
 Some Islands have signals to access shared state. If you need to customize this, you will need to either make a scope to override the specific file the signals you need to change are located in, or make copies of all related components in your local folder and adjust their dependencies.
