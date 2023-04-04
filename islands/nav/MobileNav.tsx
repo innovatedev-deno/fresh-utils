@@ -5,7 +5,7 @@
 //
 import { tw } from "twind";
 import { useState, useId } from "preact/hooks";
-import { pageProps } from "../../signals/pageProps.ts";
+import { pageProps } from "fresh-utils/signals/template.ts";
 
 export default function({links}: {links: {href: string, text: string}[]}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
