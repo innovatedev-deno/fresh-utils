@@ -8,7 +8,12 @@ Import Map (see [import_map.json](import_map.json)):
       "imports": {
         "~/": "./",
         "fresh-utils/": "https://raw.githubusercontent.com/innovatedev-deno/fresh-utils/main/",
+        
         ...
+        
+        "denomailer": "https://deno.land/x/denomailer@1.5.3/mod.ts",
+        "dotenv/": "https://deno.land/x/dotenv@v3.2.0/",
+        "validasaur": "https://deno.land/x/validasaur@v0.15.0/mod.ts"
       }
     }
 
