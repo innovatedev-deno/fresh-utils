@@ -1,6 +1,6 @@
 import { Handlers } from "$fresh/server.ts";
 import { isEmail, maxLength, required, validate } from "validasaur";
-import recaptcha from "~/lib/recaptcha.ts";
+import recaptcha from "fresh-utils/lib/mail/recaptcha.ts";
 
 export type Data = {
   data: {
