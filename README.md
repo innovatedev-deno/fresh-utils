@@ -1,5 +1,7 @@
 # fresh-utils
 
+Just a place to dump common files used in Fresh projects as well as a pattern to allow re-using components/routes/islands/middleware relying on a common pattern for import_map aliases.
+
 ## Requirements
 
 Import Map (see [import_map.json](import_map.json)):
