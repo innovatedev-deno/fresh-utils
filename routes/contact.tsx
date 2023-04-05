@@ -34,6 +34,6 @@ export default function ({ data, ...props }: PageProps<Data>) {
           <ContactForm type="contact" {...data} />
         </div>
       </div>
-    </Template>
+    </MainTemplate>
   );
 }
