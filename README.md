@@ -76,4 +76,4 @@ export {default as default} from 'fresh-utils/islands/path/to/IslandYouWant.tsx'
 
 > Note: Islands cannot currently be in folders. The folder structure in this repo is purely for organization purposes, but cannot not be replicated for islands.
 
-Some Islands have signals to access shared state. If you need to customize this, you will need to either make a scope to override the specific file the signals you need to change are located in, or make copies of all related components in your local folder and adjust their dependencies.
+Some Islands have signals to access shared state. If you need to customize this, you will need to either make a scope in your `import_map.json` to [override the specific file](https://deno.land/manual@v1.17.2/npm_nodejs/import_maps#overriding-imports) the signals you need to change are located in, or make copies of all related components in your local folder and adjust their dependencies.
