@@ -20,13 +20,13 @@ Import Map (see [import_map.json](import_map.json)):
 
 ## Routes
 
-Routes must be in your project directly. You can copy a route file from this repo, and it should work, provided you have the import_map.json setup the same, or:
+Routes must be in your project directly. You can copy a route file from this repo, and it should work, provided you have the import_map.json setup the same. Alternatively, you can use them directly from this repo by creating the desired route file, and puting this into it:
 
 ```ts
 export {default as default} from 'fresh-utils/routes/route-file-you-want.tsx';
 ```
 
-If there is a handler, you must export that as well:
+If there is a handler, you must export that as well (or export your own handler):
 
 ```ts
 export {handler, default as default} from 'fresh-utils/routes/contact.tsx';
