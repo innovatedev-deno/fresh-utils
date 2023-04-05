@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "preact/hooks";
 import type { JSX } from "preact";
-import { GReCaptcha } from "fresh-utils/lib/recaptcha.ts";
+import { GReCaptcha } from "fresh-utils/lib/mail/recaptcha.ts";
 
 export default function (
   { recaptchaKey, action, children, ...props }:
