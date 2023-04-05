@@ -4,34 +4,41 @@
 
 Import Map (see [import_map.json](import_map.json)):
 
-    {
-      "imports": {
-        "~/": "./",
-        "fresh-utils/": "https://raw.githubusercontent.com/innovatedev-deno/fresh-utils/main/",
-        
-        ...
-        
-        "denomailer": "https://deno.land/x/denomailer@1.5.3/mod.ts",
-        "dotenv/": "https://deno.land/x/dotenv@v3.2.0/",
-        "validasaur": "https://deno.land/x/validasaur@v0.15.0/mod.ts"
-      }
-    }
+```jsonc
+{
+  "imports": {
+    // other dependencies ...
+    
+    "~/": "./",
+    "fresh-utils/": "https://raw.githubusercontent.com/innovatedev-deno/fresh-utils/main/",
+    "denomailer": "https://deno.land/x/denomailer@1.5.3/mod.ts",
+    "dotenv/": "https://deno.land/x/dotenv@v3.2.0/",
+    "validasaur": "https://deno.land/x/validasaur@v0.15.0/mod.ts"
+  }
+}
+```
 
 ## Routes
 
 Routes must be in your project directly. You can copy a route file from this repo, and it should work, provided you have the import_map.json setup the same, or:
 
-    export {default as default} from 'fresh-utils/routes/route-file-you-want.tsx';
-    
+```ts
+export {default as default} from 'fresh-utils/routes/route-file-you-want.tsx';
+```
+
 If there is a handler, you must export that as well:
 
-    export {handler, default as default} from 'fresh-utils/routes/contact.tsx';
+```ts
+export {handler, default as default} from 'fresh-utils/routes/contact.tsx';
+```
 
 If the route uses any islands, you must do a similar process for those.
 
 If you get an error like the following, you are missing an island:
 
-    error: Uncaught (in promise) TypeError: Module not found "file:///var/www/my-app/islands/ContactForm.tsx".
+```
+error: Uncaught (in promise) TypeError: Module not found "file:///var/www/my-app/islands/ContactForm.tsx".
+```
 
 See [Islands](#islands) for details on how to use islands from this repo.
 
@@ -41,7 +48,9 @@ Islands must be in your project directly. You cannot import from a remote locati
 
 Create the file in your ~/islands folder, and use this code to use the version in this repo:
 
-    export {default as default} from 'fresh-utils/islands/path/to/IslandYouWant.tsx';
+```ts
+export {default as default} from 'fresh-utils/islands/path/to/IslandYouWant.tsx';
+```
 
 > Note: Islands cannot currently be in folders. The folder structure in this repo is purely for organization purposes, but cannot not be replicated for islands.
 
