@@ -1,6 +1,6 @@
 # fresh-utils
 
-Just a place to dump common files used in Fresh projects as well as a pattern to allow re-using components/routes/islands/middleware relying on a common pattern for import_map aliases.
+Just a place to dump common files used in [Fresh](https://fresh.deno.dev/docs) projects as well as a pattern to allow re-using components/routes/islands/middleware relying on a common pattern for import_map aliases.
 
 ## Requirements
 
