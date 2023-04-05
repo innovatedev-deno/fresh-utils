@@ -2,7 +2,7 @@
 
 ## Requirements
 
-Import Map:
+Import Map (see [import_map.json](import_map.json)):
 
     {
       "imports": {
