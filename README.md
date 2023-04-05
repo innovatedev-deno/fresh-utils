@@ -42,6 +42,28 @@ error: Uncaught (in promise) TypeError: Module not found "file:///var/www/my-app
 
 See [Islands](#islands) for details on how to use islands from this repo.
 
+## Middleware
+
+Middleware files must be in your project directly. The best way to use middlewares is create the `~/routes/_middleware.ts` file in your project, then do the following:
+
+```ts
+export { handler } from "fresh-utils/lib/middleware/whatever-middleware-you-need.ts";
+```
+
+[Fresh supports multiple middlewares](https://fresh.deno.dev/docs/concepts/middleware) defined in a single `_middleware.ts` file. For example, to use the SEO middleware from this repo along with your own middleware, do the following:
+
+```ts
+import { handler as seoHandler } from "fresh-utils/lib/middleware/seo.ts";
+
+export const handler = [
+  seoHandler,
+  async function myCustomMiddleware(req, ctx) {
+    // do something
+    return ctx.next();
+  },
+]
+```
+
 ## Islands
 
 Islands must be in your project directly. You cannot import from a remote location and have them work. The 2 options to use islands from this repo, copy the island you are interested in using, update any imports as necessary, or:
