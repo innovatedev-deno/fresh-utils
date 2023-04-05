@@ -17,6 +17,18 @@ Import Map (see [import_map.json](import_map.json)):
       }
     }
 
+## Routes
+
+Routes must be in your project directly. You can copy a route file from this repo, and it should work, provided you have the import_map.json setup the same, or:
+
+    export {default as default} from 'fresh-utils/routes/route-file-you-want.tsx';
+    
+If there is a handler, you must export that as well:
+
+    export {handler, default as default} from 'fresh-utils/routes/contact.tsx';
+
+If the route uses any islands, you must do a similar process for those. [Islands](#islands) for details.
+
 ## Islands
 
 Islands must be in your project directly. You cannot import from a remote location and have them work. The 2 options to use islands from this repo, copy the island you are interested in using, update any imports as necessary, or:
