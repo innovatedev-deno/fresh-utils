@@ -3,7 +3,7 @@ import { createContactHandler, Data } from "fresh-utils/lib/mail/contact.ts";
 import { send } from "fresh-utils/lib/mail/mail.ts";
 
 import ContactForm from "~/islands/ContactForm.tsx";
-import Template from "~/components/Template.tsx";
+import MainTemplate from "fresh-utils/components/template/MainTemplate.tsx";
 
 import publicSettings from '~/settings-public.ts';
 
@@ -24,9 +24,9 @@ ${data.message}`,
   })
 );
 
-export default function ({ data }: PageProps<Data>) {
+export default function ({ data, ...props }: PageProps<Data>) {
   return (
-    <Template title="Contact">
+    <MainTemplate title="Contact" props={props}>
       <div class="max-w-md m-auto">
         <div class="">
           <h2 class="text-xl font-bold my-4">Contact</h2>
