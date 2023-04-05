@@ -27,7 +27,13 @@ If there is a handler, you must export that as well:
 
     export {handler, default as default} from 'fresh-utils/routes/contact.tsx';
 
-If the route uses any islands, you must do a similar process for those. [Islands](#islands) for details.
+If the route uses any islands, you must do a similar process for those.
+
+If you get an error like the following, you are missing an island:
+
+    error: Uncaught (in promise) TypeError: Module not found "file:///var/www/my-app/islands/ContactForm.tsx".
+
+See [Islands](#islands) for details on how to use islands from this repo.
 
 ## Islands
 
