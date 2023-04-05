@@ -22,14 +22,14 @@ export default function (
   >
     {isSuccess
       ? (
-        <div className="bg-green-200 border border-green-600 p-4 my-4">
+        <div className="bg-green-100 border border-green-600 p-4 my-4">
           Thank you for your submission. We will be in touch with you
           shortly.
         </div>
       )
       : errors &&
         (
-          <div class="bg-red-200 border border-red-600 p-4 my-4">
+          <div class="bg-red-100 border border-red-600 p-4 my-4">
             {Object.entries(errors).map(([field, error]) =>
               Object.entries(error).map(([rule, message]) => (
                 <div>{message}</div>
