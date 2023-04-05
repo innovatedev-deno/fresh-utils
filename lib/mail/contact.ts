@@ -55,7 +55,6 @@ export const createContactHandler = (
       recaptchaValidation.tokenProperties.action !==
         recaptchaValidation.event.expectedAction
     ) {
-      console.error(recaptchaValidation);
       return ctx.render({
         data,
         errors: {
