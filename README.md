@@ -12,7 +12,7 @@ Import Map (see [import_map.json](import_map.json)):
     // other dependencies ...
     
     "~/": "./",
-    "fresh-utils/": "https://raw.githubusercontent.com/innovatedev-deno/fresh-utils/main/",
+    "fresh-utils/": "https://raw.githubusercontent.com/innovatedev-deno/fresh-utils/0.0.1-dev-1/",
     "denomailer": "https://deno.land/x/denomailer@1.5.3/mod.ts",
     "dotenv/": "https://deno.land/x/dotenv@v3.2.0/",
     "validasaur": "https://deno.land/x/validasaur@v0.15.0/mod.ts"
