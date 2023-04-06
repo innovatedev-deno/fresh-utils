@@ -48,7 +48,7 @@ export default function({links}: {links: {href: string, text: string, image?: st
           resolvedPath?.startsWith(link.href) ? 'font-bold underline' : ''
         }`}
         href={link.href}>
-          {image ? <img src={image} height="32" alt="" /> : ''}
+          {link.image ? <img src={link.image} height="32" alt="" /> : ''}
           {link.text}
         </a>
       )}
