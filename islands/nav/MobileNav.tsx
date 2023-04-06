@@ -7,7 +7,7 @@ import { tw } from "twind";
 import { useState, useId } from "preact/hooks";
 import { pageProps } from "fresh-utils/signals/template.ts";
 
-export default function({links}: {links: {href: string, text: string}[]}) {
+export default function({links}: {links: {href: string, text: string, image: string}[]}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuId = useId();
 
@@ -48,6 +48,7 @@ export default function({links}: {links: {href: string, text: string}[]}) {
           resolvedPath?.startsWith(link.href) ? 'font-bold underline' : ''
         }`}
         href={link.href}>
+          {image ? <img src={image} height="32" alt="" /> : ''}
           {link.text}
         </a>
       )}
