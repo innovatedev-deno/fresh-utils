@@ -15,7 +15,7 @@ interface TemplateProps {
 }
 
 export default function MainTemplate({ children, props, title, footer=<p>
-  &copy;{new Date().getFullYear()}
+  &copy;{new Date().getFullYear()} {publicSettings.app.title}
 </p> }: TemplateProps) {
 
   // TODO: figure out why theme vars have spaces in them?
