@@ -44,11 +44,11 @@ export default function({links}: {links: {href: string, text: string, image?: st
         } sm:flex flex-col sm:flex-row sm:items-center sm:justify-center sm:space-x-4 w-full sm:w-auto sm:space-y-0 space-y-2 text-center`}
         id={menuId}>
       {links.map(link => <a
-        class={`p-4 border-t sm:border-0 border-gray-400 block ${
+        class={`p-4 border-t sm:border-0 border-gray-400 block flex gap-4 ${
           resolvedPath?.startsWith(link.href) ? 'font-bold underline' : ''
         }`}
         href={link.href}>
-          {link.image ? <img src={link.image} height="32" alt="" /> : ''}
+          {link.image ? <img src={link.image} class="h-[32px]" alt="" /> : ''}
           {link.text}
         </a>
       )}
