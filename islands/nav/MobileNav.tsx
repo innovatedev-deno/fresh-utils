@@ -44,7 +44,7 @@ export default function({links}: {links: {href: string, text: string, image?: st
         } sm:flex flex-col sm:flex-row sm:items-center sm:justify-center sm:space-x-4 w-full sm:w-auto sm:space-y-0 space-y-2 text-center`}
         id={menuId}>
       {links.map(link => <a
-        class={`p-4 border-t sm:border-0 border-gray-400 flex gap-4 ${
+        class={`p-4 border-t sm:border-0 border-gray-400 flex gap-4 items-center ${
           resolvedPath?.startsWith(link.href) ? 'font-bold underline' : ''
         }`}
         href={link.href}>
