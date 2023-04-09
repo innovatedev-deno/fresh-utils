@@ -5,7 +5,7 @@ Just a place to dump common files used in [Fresh](https://fresh.deno.dev/docs) p
 ## Quick Start
 
 ```bash
-deno run -A https://raw.githubusercontent.com/innovatedev-deno/fresh-utils/main/install.ts
+deno run -A https://raw.githubusercontent.com/innovatedev-deno/fresh-utils/main/install.ts install
 
 # cd to your fresh project
 fresh-utils init

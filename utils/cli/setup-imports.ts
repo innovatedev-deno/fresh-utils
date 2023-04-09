@@ -1,13 +1,33 @@
+import { getFreshUtilsImports } from "./core.ts";
 import {freshImports, twindImports} from "./deps.ts";
-import {freshUtilsImports} from "./deps.ts";
 
-export function setupImports(configFile: string, freshUtilsUrl: string) {
-  const imports: Record<string, string> = freshUtilsImports.imports;
+export async function setupImports(configFile: string, freshUtilsUrl: string) {
+  const freshUtilsImports = getFreshUtilsImports(configFile,freshUtilsUrl);
+  const imports = (await freshUtilsImports).default.imports;
+
   freshImports(imports);
   twindImports(imports);
 
-  imports["fresh-utils"] = freshUtilsUrl;
+  imports["fresh-utils"] = `${freshUtilsUrl}mod.ts`;
+  imports["fresh-utils/"] = freshUtilsUrl;
 
+  try {
+    Deno.statSync(configFile)
+  } catch (error) {
+    if(error instanceof Deno.errors.NotFound) {
+      console.error(`Config file ${configFile} does not exist. Are you in a Deno Fresh project?
+
+To create a new fresh project, run:
+
+  deno run -A https:://fresh.deno.dev my-project
+  cd my-project
+  fresh-utils init
+`);
+      Deno.exit(1);
+    }
+    throw error;
+  }
+  
   const config = JSON.parse(Deno.readTextFileSync(configFile));
   const existingImports = config.imports;
   
