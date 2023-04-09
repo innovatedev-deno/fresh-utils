@@ -1,4 +1,4 @@
-import "dotenv/load.ts";
+import "std/dotenv/load.ts";
 
 export default {
   smtp: {
