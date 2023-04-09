@@ -1,10 +1,7 @@
 {
   "imports": {
     "~/": "./",
-    "fresh-utils": "https://raw.githubusercontent.com/innovatedev-deno/fresh-utils/0.0.1-dev-2/mod.ts",
-    "fresh-utils/": "https://raw.githubusercontent.com/innovatedev-deno/fresh-utils/0.0.1-dev-2/",
-    "denomailer": "https://deno.land/x/denomailer@1.6.0/mod.ts",
-    "validasaur": "https://deno.land/x/validasaur@v0.15.0/mod.ts",
+    "std/": "https://deno.land/std@0.182.0/",
     "$fresh/": "https://deno.land/x/fresh@1.1.5/",
     "preact": "https://esm.sh/preact@10.13.1",
     "preact/": "https://esm.sh/preact@10.13.1/",
@@ -12,6 +9,10 @@
     "@preact/signals": "https://esm.sh/*@preact/signals@1.1.3",
     "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.2.3",
     "twind": "https://esm.sh/twind@0.16.19",
-    "twind/": "https://esm.sh/twind@0.16.19/"
+    "twind/": "https://esm.sh/twind@0.16.19/",
+    "fresh-utils": "https://raw.githubusercontent.com/innovatedev-deno/fresh-utils/0.0.1-dev-5/mod.ts",
+    "fresh-utils/": "https://raw.githubusercontent.com/innovatedev-deno/fresh-utils/0.0.1-dev-5/",
+    "denomailer": "https://deno.land/x/denomailer@1.6.0/mod.ts",
+    "validasaur": "https://deno.land/x/validasaur@v0.15.0/mod.ts"
   }
 }

@@ -1,7 +1,7 @@
 import { relative, join } from "https://deno.land/std@0.182.0/path/mod.ts";
 import { ParseOptions } from "./deps.ts";
 
-export const VERSION = "0.0.1-dev-4";
+export const VERSION = "0.0.1-dev-5";
 
 export interface Command {
   command: (options: Record<string, boolean|string|number>) => void;

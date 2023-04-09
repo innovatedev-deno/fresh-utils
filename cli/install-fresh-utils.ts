@@ -1,6 +1,6 @@
-import { getUrl } from "./core.ts";
+import { VERSION, getUrl } from "./core.ts";
 
-export function installFreshUtils(version?: string, url?: string, fallbackVersion='main') {
+export function installFreshUtils(version?: string, url?: string, fallbackVersion=VERSION) {
   new Promise<void>((resolve, reject) => {
     Deno.run({
       cmd: [

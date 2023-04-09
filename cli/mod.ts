@@ -1,8 +1,8 @@
-import { Commands, VERSION, getUrl } from "./utils/cli/core.ts";
-import { parseWithHelp } from "./utils/cli/args-parse-with-help.ts";
+import { Commands, VERSION, getUrl } from "./core.ts";
+import { parseWithHelp } from "./args-parse-with-help.ts";
 
-import { installFreshUtils } from "./utils/cli/install-fresh-utils.ts";
-import { setupImports } from "./utils/cli/setup-imports.ts";
+import { installFreshUtils } from "./install-fresh-utils.ts";
+import { setupImports } from "./setup-imports.ts";
 
 const commands: Commands = {
   install: {
@@ -13,10 +13,10 @@ const commands: Commands = {
     options: {
       string: ["version", "url",],
       default: {
-        url: getUrl(undefined, undefined, 'main'),
+        url: getUrl(undefined, undefined, VERSION),
       },
       description: {
-        version: `Version of fresh-utils to use. (default: main)`,
+        version: `Version of fresh-utils to use. (default: ${VERSION})`,
         url: `URL to fresh-utils library. If --version is specified, this is ignored.\n\t\t\t`,
       }
     },
