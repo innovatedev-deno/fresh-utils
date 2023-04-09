@@ -19,10 +19,9 @@ export function getUrl(version?: string, url?: string, fallbackVersion=VERSION):
 
 export function getFreshUtilsImports(config: string, url: string) {
   if(url.startsWith(".")) {
-    url = relative(Deno.cwd(), url);
+    url = join(Deno.cwd(),relative(Deno.cwd(), url));
   }
-    console.log(join(Deno.cwd(), url, config));
-  return import(join(Deno.cwd(), url, config), {
+  return import(join(url, config), {
     assert: {
       type: "json"
     }
