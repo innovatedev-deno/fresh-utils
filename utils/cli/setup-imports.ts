@@ -39,19 +39,17 @@ To create a new fresh project, run:
   }
   , {});
 
-  const newConfig = {
-    ...config,
-    imports: {
-      ...existingImports,
-      ...newImports,
-    }
-  }
-
-  
   if(Object.keys(newImports).length === 0) {
     console.log(`No new imports to add to ${configFile}`);
   } else {
-    console.log(`Adding imports to ${configFile}:`, newImports);
+    const newConfig = {
+      ...config,
+      imports: {
+        ...existingImports,
+        ...newImports,
+      }
+    }
+
     Deno.writeTextFileSync(configFile, JSON.stringify(newConfig, null, 2));
   }
 }
