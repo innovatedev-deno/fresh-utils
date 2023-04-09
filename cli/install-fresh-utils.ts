@@ -12,7 +12,7 @@ export function installFreshUtils(version?: string, url?: string, fallbackVersio
         "--allow-write=./",
         "-n=fresh-utils",
         "-f",
-        `${getUrl(version, url, fallbackVersion)}install.ts`
+        `${getUrl(version, url, fallbackVersion)}cli/mod.ts`
       ],
       stdout: "inherit",
       stderr: "inherit",
